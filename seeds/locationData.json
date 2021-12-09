@@ -1,17 +1,18 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "location_name": "Adelaide Central Market",
+    "description": "Experience a youthful, energetic thrive in the hub of tasty gourmet and rich culture in the awe-striking Adelaide Central Market, which has been stealing hearts for nearly 145 years. Established in 1869, this beautiful market accommodates more than 80 traders making it one of the largest markets in the country and one of the best places to visit in Adelaide."
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "location_name": "Cleland Conservation Park",
+    "description": "If you want to experience Adelaide's natural and cultural beauty, a visit to Cleland Conservation Park is a must. The area includes the renowned Cleland Wildlife Park, Mount Lofty Peak and the famous Waterfall Gully. In addition, there are walking and cycling trails that let you enjoy the varied wildlife and picturesque view of Adelaide hills, and it is one of the best tourist places in Adelaide."
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "location_name": "Rundle Mall",
+    "description": "If you are looking for some shopping in Adelaide, there is no better place than Rundle Mall. It is the first Australian pedestrian street mall. It houses several leading retail stores in South Australia. Whether it is fashion stores, electronics, jewellery, supermarket, departmental store, or food, the mall has it all, and it is one of the best places to visit in Adelaide."
+  },
+  {
+    "location_name": "2KW Bar and Restaurant",
+    "description": "Eight floors up on King William Street, the Palmer Hospitality Group has built a rooftop gastrodome with five indoor and outdoor entertaining zones with breathtaking views, and a menu to match. It's the kind of place where time slows down, burdens are lifted and focus shifts to what's really important - great food and serious booze."
   }
 ]
