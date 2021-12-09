@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Location, User } = require('../models');
+const { Location, User, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -9,18 +9,15 @@ router.get('/', async (req, res) => {
     console.log('locationData: ', locationData)
 
     // Serialize data so the template can read it
-    const locations = projectData.map((project) => project.get({ plain: true }));
-    console.log('location: ',locations)
-
-    //extract unique city names
-    const cities = locations.map((city)=> city.city_name)
-    console.log('cities: ',cities)
+    const locations = locationData.map((location) => location.get({ plain: true }));
+    console.log('locations: ',locations);
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      cities, 
-      logged_in: req.session.logged_in 
+      locations, 
+      logged_in: req.session.logged_in,
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -34,7 +31,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Review }],
     });
 
     const user = userData.get({ plain: true });
