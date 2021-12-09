@@ -16,7 +16,7 @@ Location.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     date_visited: {
       type: DataTypes.DATE,

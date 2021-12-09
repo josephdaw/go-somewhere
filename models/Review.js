@@ -15,13 +15,20 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    review: {
+    content: {
       type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
+        key: 'id',
+      },
+    },
+    location_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'location',
         key: 'id',
       },
     },
