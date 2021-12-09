@@ -1,0 +1,5 @@
+DB_USER=root
+DB_PASSWORD=rootroot
+DB_NAME=partyparrot_db
+DB_SECRET=Party parrot parties profusely
+JAWSDB_URL=mysql://wpqoyvlahv3f3s6a:i9ownmwo8xyik3uy@u6354r3es4optspf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/cu4yoe69kmd4fwqh

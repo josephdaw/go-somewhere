@@ -13,19 +13,26 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+
+ 
+try {
   for (const location of locationData) {
     await Location.create({
       ...location,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-
+  
   for (const review of reviewData) {
-    await review.create({
+    await Review.create({
       ...review,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
+  
+} catch (error) {
+  console.log(error)
+  
+}
+
 
 
   process.exit(0);
