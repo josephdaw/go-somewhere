@@ -1,17 +1,20 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
+    "id": 1,
+    "name": "Alex",
+    "email": "alex@hotmail.com",
     "password": "password12345"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
+    "id": 2,
+    "name": "Joe",
+    "email": "joe@gmail.com",
     "password": "password12345"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
+    "id": 3,
+    "name": "Ash",
+    "email": "ash@aol.com",
     "password": "password12345"
   }
 ]
