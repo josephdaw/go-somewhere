@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// routes for '/users'
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -12,6 +14,7 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -21,19 +24,13 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+      return res.status(400).json({ message: 'Incorrect email or password, please try again' });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+      return res.status(400).json({ message: 'Incorrect email or password, please try again' });
     }
 
     req.session.save(() => {
@@ -44,6 +41,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -54,6 +52,7 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
+    console.log(err);
     res.status(404).end();
   }
 });
