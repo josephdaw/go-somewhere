@@ -23,14 +23,6 @@ Location.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    latitude: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    longitude: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -44,8 +36,8 @@ Location.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'location',
   }
 );
 
-module.exports = Project;
+module.exports = Location;
