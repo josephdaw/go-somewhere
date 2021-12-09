@@ -1,2 +1,2 @@
 # party-parrots
-A site to find new places to visit and post about places you would like to go to.
+A site to find new places to visit and post about places you would like to go to. Party parrots party hard
