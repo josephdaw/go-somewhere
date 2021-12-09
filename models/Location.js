@@ -18,18 +18,10 @@ Location.init(
     description: {
       type: DataTypes.STRING,
     },
-    date_visited: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    latitude: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    longitude: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -44,8 +36,8 @@ Location.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'location',
   }
 );
 
-module.exports = Project;
+module.exports = Location;
