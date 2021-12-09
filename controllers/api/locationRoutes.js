@@ -1,6 +1,17 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Location } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+// get locations based on the user selecting a name
+router.get('/:name', withAuth, async (req, res) => {
+  try {
+    
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+})
+
 
 router.post('/', withAuth, async (req, res) => {
   try {
