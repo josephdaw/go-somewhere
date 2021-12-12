@@ -2,12 +2,12 @@ const router = require('express').Router();
 const { Location, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// routes for '/reviews'
+// routes for '/api/reviews'
 
 // get reviews based on id
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const reviewData = await Review.getByPk(req.params.id, {
+    const reviewData = await Review.findByPk(req.params.id, {
       include: [{ model: Location }],
     });
     console.log('reviewData: ', reviewData)
