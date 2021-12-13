@@ -1,14 +1,13 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const location_name = document.querySelector('#location-name').value.trim();
+  const description = document.querySelector('#location-description').value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (location_name && description) {
+    const response = await fetch(`/api/locations`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ location_name, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create new location');
     }
   }
 };
@@ -39,7 +38,7 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-location-form')
   .addEventListener('submit', newFormHandler);
 
 document
