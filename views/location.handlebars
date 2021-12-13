@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h2>{{location_name}}</h2>
+  <p>{{description}}</p>
+  <p>
+    {{#if logged_in}}
+    <button class="btn btn-primary">Add a comment</button>
+    {{else}}
+    <button class="btn btn-primary">
+      <a href="/login">Login to add a comment</a>
+    </button>
+    {{/if}}
+  </p>
+</div>
+
+{{#each reviews as |review|}}
+<div class="text-center">
+  <h2>{{review.title}}</h2>
+  <p>{{review.content}}</p>
+</div>
+{{/each}}
+
+{{#if logged_in}}
+<script src="/js/location.js"></script>
+{{/if}}

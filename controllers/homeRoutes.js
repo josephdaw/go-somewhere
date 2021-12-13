@@ -6,11 +6,15 @@ router.get('/', async (req, res) => {
   try {
     // Get all locations
     const locationData = await Location.findAll();
-    console.log('locationData: ', locationData)
-
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
-    console.log('locations: ',locations);
+
+    // // count number of reviews locations
+    // const locationData = await Location.findAll();
+    // // Serialize data so the template can read it
+    // const locations = locationData.map((location) => location.get({ plain: true }));
+
+
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -24,6 +28,27 @@ router.get('/', async (req, res) => {
   }
 });
 
+// get locations based on the user selection
+router.get('/locations/:id', withAuth, async (req, res) => {
+  try {
+    // Get location by name
+    const locationData = await Location.findByPk(req.params.id, {
+      include: [{ model: Review }],
+    });
+
+    const location = locationData.get({ plain: true })
+    console.log(location)
+
+    res.render('location', { 
+      ...location, 
+      logged_in: req.session.logged_in,
+    });
+
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

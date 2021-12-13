@@ -11,6 +11,10 @@ User.hasMany(Review, {
   onDelete: 'CASCADE'
 });
 
+Location.hasMany(Review, {
+  foreignKey: 'location_id'
+})
+
 Location.belongsTo(User, {
   foreignKey: 'user_id'
 });
@@ -18,6 +22,10 @@ Location.belongsTo(User, {
 Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
+
+Review.belongsTo(Location, {
+  foreignKey: 'location_id'
+})
 
 module.exports = { User, Location, Review };
 
