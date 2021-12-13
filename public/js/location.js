@@ -1,47 +1,35 @@
-// const newFormHandler = async (event) => {
-//   event.preventDefault();
+const newFormHandler = async (event) => {
+  event.preventDefault();
 
-//   const name = document.querySelector('#project-name').value.trim();
-//   const needed_funding = document.querySelector('#project-funding').value.trim();
-//   const description = document.querySelector('#project-desc').value.trim();
+  const urlArray = window.location.pathname.split('/');
+  const location_id = urlArray[urlArray.length - 1];
 
-//   if (name && needed_funding && description) {
-//     const response = await fetch(`/api/projects`, {
-//       method: 'POST',
-//       body: JSON.stringify({ name, needed_funding, description }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
+  const title = document.querySelector('#review-title').value.trim();
+  const content = document.querySelector('#review-content').value.trim();
 
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to create project');
-//     }
-//   }
-// };
+  if (title && content) {
+    const response = await fetch(`/api/reviews`, {
+      method: 'POST',
+      body: JSON.stringify({ 
+        title, 
+        content,
+        location_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
+    if (response.ok) {
+      document.location.reload();
+      
+    } else {
+      alert('Failed to create review');
+    }
+  }
 
-//     const response = await fetch(`/api/projects/${id}`, {
-//       method: 'DELETE',
-//     });
 
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to delete project');
-//     }
-//   }
-// };
+};
 
-// document
-//   .querySelector('.new-project-form')
-//   .addEventListener('submit', newFormHandler);
-
-// document
-//   .querySelector('.project-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('#submitReview')
+  .addEventListener('click', newFormHandler);
