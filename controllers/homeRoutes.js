@@ -5,16 +5,10 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all locations
-    const locationData = await Location.findAll();
+    const locationData = await Location.findAll({ limit: 5 });
+
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
-
-    // // count number of reviews locations
-    // const locationData = await Location.findAll();
-    // // Serialize data so the template can read it
-    // const locations = locationData.map((location) => location.get({ plain: true }));
-
-
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
