@@ -1,24 +1,22 @@
 <!-- Loop over each object in the projects array -->
+   <div id="map"></div>
+
 {{#each locations as |location| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
       <a href="/locations/{{location.id}}">{{location.location_name}}</a>
     </h2>
-    {{!-- <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p> --}}
-    {{!-- <p>Created by {{location.user.name}} on {{format_date project.date_created}}</p> --}}
   </div>
   <div class="col-md-7">
     <p>
       {{location.description}}
+      
     </p>
   </div>
 </div>
+
+</div>
 {{/each}}
+
+<script src="/js/leaflet.js"></script>
