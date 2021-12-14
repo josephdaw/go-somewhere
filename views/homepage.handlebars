@@ -1,22 +1,22 @@
-<!-- Loop over each object in the projects array -->
-   <div id="map"></div>
-
-{{#each locations as |location| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <a href="/locations/{{location.id}}">{{location.location_name}}</a>
-    </h2>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{location.description}}
-      
-    </p>
-  </div>
+<div class="jumbotron">
+  <h1>Lets go somewhere</h1>
+  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
+    tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
 
-</div>
-{{/each}}
+<div id = "map"> </div>
+<hr>
 
-<script src="/js/leaflet.js"></script>
+<div class="row-fluid">
+
+
+  {{#each locations as |location| }}
+    <div class="span4">
+      <h2><a class = 'lead locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
+      <p class="lead small">{{location.description}} </p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+    
+  {{/each}}
+
+</div>
