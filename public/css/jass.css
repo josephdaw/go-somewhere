@@ -1165,7 +1165,6 @@ form [type='radio'] {
 }
 
 .container {
-  width: 85%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1250,7 +1249,6 @@ form [type='radio'] {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   margin-left: -15px;
   margin-right: -15px;
