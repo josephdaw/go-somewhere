@@ -41,6 +41,43 @@ router.get('/', async (req, res) => {
   }
 });
 
+// get all locations
+router.get('/locations', async (req, res) => {
+  try {
+    const locationData = await Location.findAll({
+      attributes: {
+        include: [
+            [
+                sequelize.literal(`(
+                    SELECT COUNT(*)
+                    FROM review
+                    WHERE
+                    review.location_id = location.id
+                )`),
+                'review_count'
+            ]
+        ]
+    },
+    order: [
+        [sequelize.literal('review_count'), 'DESC']
+    ]
+    });
+
+    // Serialize data so the template can read it
+    const locations = locationData.map((location) => location.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('locations', { 
+      locations, 
+      logged_in: req.session.logged_in,
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // get locations based on the user selection
 router.get('/locations/:id', withAuth, async (req, res) => {
   try {

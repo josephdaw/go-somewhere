@@ -13,10 +13,9 @@
     {{#each locations as |location| }}
     <div class="col locationTiles">
       <h2><a class='locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
-      <p class="locationText">{{location.description}} </p>
-      <p><a class="btn" href="#">View details &raquo;</a></p>
+      <p class="locationText">{{location.description}}</p>
+      <p>Reviews: {{location.review_count}}<a class="btn" href="/locations/{{location.id}}">View details &raquo;</a></p>
     </div>
-
     {{/each}}
   </div>
 </div>

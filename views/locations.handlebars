@@ -1,0 +1,13 @@
+{{#each locations as |location| }}
+<div class="col locationTiles">
+  <h2><a class='locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
+  <p class="locationText">{{location.description}} </p>
+  <p class="locationText"> </p>
+  <p>
+    {{#if location.review_count}}
+    Reviews: {{location.review_count}}
+    {{/if}}
+    <a class="btn" href="/locations/{{location.id}}">View details &raquo;</a>
+  </p>
+</div>
+{{/each}}
