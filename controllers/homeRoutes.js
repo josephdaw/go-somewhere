@@ -1,11 +1,30 @@
 const router = require('express').Router();
 const { Location, User, Review } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all locations
-    const locationData = await Location.findAll({ limit: 5 });
+    // Get 3 most reviewed locations for homepage
+    const locationData = await Location.findAll({ 
+      limit: 3,
+      attributes: {
+        include: [
+            [
+                sequelize.literal(`(
+                    SELECT COUNT(*)
+                    FROM review
+                    WHERE
+                    review.location_id = location.id
+                )`),
+                'review_count'
+            ]
+        ]
+    },
+    order: [
+        [sequelize.literal('review_count'), 'DESC']
+    ]
+    });
 
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
