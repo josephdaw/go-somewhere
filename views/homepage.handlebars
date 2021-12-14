@@ -1,24 +1,22 @@
-<!-- Loop over each object in the projects array -->
-{{#each locations as |location| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
-      <a href="/locations/{{location.id}}">{{location.location_name}}</a>
-    </h2>
-    {{!-- <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p> --}}
-    {{!-- <p>Created by {{location.user.name}} on {{format_date project.date_created}}</p> --}}
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{location.description}}
-    </p>
-  </div>
+<div class="jumbotron">
+  <h1>Lets go somewhere</h1>
+  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
+    tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
-{{/each}}
+
+<div id = "map"> </div>
+<hr>
+
+<div class="row-fluid">
+
+
+  {{#each locations as |location| }}
+    <div class="span4">
+      <h2><a class = 'lead locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
+      <p class="lead small">{{location.description}} </p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+    
+  {{/each}}
+
+</div>
