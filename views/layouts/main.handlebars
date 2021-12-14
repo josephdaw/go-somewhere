@@ -5,60 +5,55 @@
   <title>Party Parrots</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.css"/>
-    <script src="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.js"></script>
-    <link rel="stylesheet" href="/css/jass.css">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-  
-  
-    <link rel="stylesheet" href="/css/style.css">
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"
-  />
+  <link rel="stylesheet" href="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.css" />
+  <script src="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.js"></script>
+
+  <link rel="stylesheet" href="/css/jass.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
   <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
 
 
 </head>
 
 <body class="">
-  <header>
-    <div class="masthead">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container mb-4">
-            <ul class="nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/location.html">Locations</a></li>
-              <li><a href="/review.html">Reviews</a></li>
-              <li> {{#if logged_in}}
-                <a href="/profile">Profile</a>
-               <li> <a  id="logout">Logout</a></li>
+  <div class="container">
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container mb-4">
+              <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/location.html">Locations</a></li>
+                <li><a href="/review.html">Reviews</a></li>
+                <li> {{#if logged_in}}
+                  <a href="/profile">Profile</a>
+                <li> <a id="logout">Logout</a></li>
                 {{else}}
                 <a href="/login">Login</a>
                 {{/if}}
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
+    <div class="placeholder">
+      <!-- Render the sub layout -->
+      {{{ body }}}
     </div>
-  </header>
 
-  <main class="container container-fluid mt-5">
-    <!-- Render the sub layout -->
-    {{{ body }}}
-  </main>
+    <hr>
 
-
-  <footer>
-    <div class="footer ">
+    <div class="footer">
       <p>&copy; Company Parrots</p>
     </div>
 
+  </div>
 
-  </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
