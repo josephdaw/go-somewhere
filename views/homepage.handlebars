@@ -16,7 +16,11 @@
       <p class="locationText">{{location.description}}</p>
       <p>
         {{#if location.review_count}}
-        Reviews: {{location.review_count}}
+        <a class="btn" href="/locations/{{location.id}}">
+          <button type="button" class="btn btn-outline-secondary">
+            Reviews <span class="badge bg-secondary">{{location.review_count}}</span>
+          </button>
+        </a>
         {{/if}}
         <a class="btn" href="/locations/{{location.id}}">View details &raquo;</a>
       </p>
