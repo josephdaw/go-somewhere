@@ -16,5 +16,11 @@
     "location_name": "2KW Bar and Restaurant",
     "description": "Eight floors up on King William Street, the Palmer Hospitality Group has built a rooftop gastrodome with five indoor and outdoor entertaining zones with breathtaking views, and a menu to match. It's the kind of place where time slows down, burdens are lifted and focus shifts to what's really important - great food and serious booze.",
     "user_id": "3"
+  },
+  {
+    "id": 4,
+    "location_name": "Botanic Park",
+    "description": "A wonderful oasis in the middle of the city.",
+    "user_id": "3"
   }
 ]

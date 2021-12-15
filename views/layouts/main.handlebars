@@ -28,9 +28,10 @@
         <div class="styleNavbar">
           <ul class="style-ul-nav">
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/">Home</a></li>
-            <li class="style-li-nav"><a class="style-a-ul-nav" href="/about.html">About</a></li>
-            <li class="style-li-nav"><a class="style-a-ul-nav" href="/location.html">Locations</a></li>
-            <li class="style-li-nav"> {{#if logged_in}}
+            <li class="style-li-nav"><a class="style-a-ul-nav" href="/about">About</a></li>
+            <li class="style-li-nav"><a class="style-a-ul-nav" href="/locations">Locations</a></li>
+            <li class="style-li-nav">
+              {{#if logged_in}}
               <a class="style-a-ul-nav" href="/profile">Profile</a>
             <li class="style-li-nav"> <a id="logout">Logout</a></li>
             {{else}}
@@ -41,17 +42,18 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div>
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </div>
+  <div>
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </div>
 
-    <hr>
+  <hr>
 
-    <div class="footer">
-      <p>&copy; Company Parrots</p>
-    </div>
+  <div class="footer">
+    <p>&copy; Company Parrots</p>
+  </div>
 
   </div>
 
