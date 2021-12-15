@@ -41,6 +41,18 @@ router.get('/', async (req, res) => {
   }
 });
 
+// routing for about page
+router.get('/about', (req, res) => {
+  try {
+    res.render('about');
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+
+});
+
 // get all locations
 router.get('/locations', async (req, res) => {
   try {
