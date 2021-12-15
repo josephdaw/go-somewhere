@@ -40,5 +40,26 @@
       "content": "Huge park to explore. Very flat and easy to get around. Nice place for a picnic on a sunny day. Recommended.",
       "user_id": 2,
       "location_id": 4
+    },
+    {
+      "id": 7,
+      "title": "its okay",
+      "content": "For a new stadium it lacks so much. The seat are pathetic price of tickets seats could be much better. The food facilities are under staffed and don't allow for a good flow for quick service. The most frustrating to line up for 15 mins only to get third from service to be told they ran out of beer then have to line up again at another bar. Not good enough",
+      "user_id": 1,
+      "location_id": 5
+    },
+    {
+      "id": 8,
+      "title": "Australia's most beautiful stadium",
+      "content": "Adelaide Oval has the reputation for being Australia's most most beautiful stadium. Rather than being a colosseum like the Melbourne Cricket Ground (MCG), it resembles an English county cricket ground.",
+      "user_id": 2,
+      "location_id": 5
+    },
+    {
+      "id": 9,
+      "title": "A gem of a tour",
+      "content": "This is such a gem of a tour. Highly recommended. We should be so proud of this amazing stadium. Such a good value tour as well. Even if you are not a sports fan it is interesting & the volunteer tour guide. Bob was awesome.",
+      "user_id": 3,
+      "location_id": 5
     }
   ]

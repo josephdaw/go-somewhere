@@ -30,14 +30,12 @@
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/">Home</a></li>
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/about">About</a></li>
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/locations">Locations</a></li>
-            <li class="style-li-nav">
-              {{#if logged_in}}
-              <a class="style-a-ul-nav" href="/profile">Profile</a>
-            <li class="style-li-nav"> <a id="logout">Logout</a></li>
+            {{#if logged_in}}
+            <li class="style-li-nav"><a class="style-a-ul-nav" href="/profile">Profile</a></li>
+            <li class="style-li-nav"><a class="style-a-ul-nav" id="logout">Logout</a></li>
             {{else}}
-            <a class="style-a-ul-nav" href="/login">Login</a>
+            <li class="style-li-nav"><a class="style-a-ul-nav" href="/login">Login</a></li>
             {{/if}}
-            </li>
           </ul>
         </div>
       </div>
