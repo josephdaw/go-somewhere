@@ -99,7 +99,6 @@ router.get('/locations/:id', withAuth, async (req, res) => {
     });
 
     const location = locationData.get({ plain: true })
-    console.log(location)
 
     res.render('location', { 
       ...location, 

@@ -25,7 +25,7 @@ router.get('/:name', withAuth, async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     // Get all locations - LIMIT 5
-    const locationData = await Location.findAll({ limit: 5 });
+    // const locationData = await Location.findAll({ limit: 5 });
 
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
