@@ -1,15 +1,29 @@
+<link rel="stylesheet" href="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.css" />
+<script src="https://ssimpkin.github.io/dhsite2017/files/leaflet-demo/leaflet/leaflet.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
+<script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+
+<style>
+  #map {
+    height: 400px;
+  }
+</style>
+
 <div class="jumbotron">
   <h1>Lets go somewhere</h1>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
     tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
 
-<div id="map"> </div>
-<hr>
-
 <div class="container">
   <div class="row">
+    <div class="col" id="map"></div>
+  </div>
 
+  <hr>
+
+  <div class="row">
     {{#each locations as |location| }}
     <div class="col locationTiles">
       <h2><a class='locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
@@ -28,3 +42,5 @@
     {{/each}}
   </div>
 </div>
+
+<script src="/js/leaflet.js"></script>

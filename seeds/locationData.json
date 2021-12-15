@@ -19,8 +19,14 @@
   },
   {
     "id": 4,
-    "location_name": "Botanic Park",
-    "description": "A wonderful oasis in the middle of the city.",
+    "location_name": "Adelaide Botanic Garden",
+    "description": "In the heart of the city but another world away ... Take time out to explore the beauty and diversity of plants from across Australia and around the world. Spend an hour or spend the day among the 50 hectares of magnificently maintained gardens and stunning architecture. Relax in the shade or enjoy a coffee among some of Australia's finest plant collections.",
     "user_id": "3"
+  },
+  {
+    "id": 5,
+    "location_name": "Adelaide Oval",
+    "description": "Adelaide Oval has long been one of Australia’s most recognisable and prestigious venues and hosts cricket, football, concerts, functions and major events at the highest level. Known the world over as a beautiful and historic sporting venue, the Oval attracts visitors in their thousands from within South Australia, interstate and overseas.",
+    "user_id": "2"
   }
 ]
