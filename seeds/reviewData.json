@@ -3,14 +3,42 @@
       "id": 1,
       "title": "Everything for a sumptuous feast under the one roof.",
       "content": "Absolutely the best and freshest fruit, seafood, meat, many cheeses, bread, coffee to eat in or take home + flowers etc.,",
-      "user_id": 2,
+      "user_id": 1,
       "location_id": 1
     },
     {
       "id": 2,
-      "title": "Best Tour Ever!",
-      "content": "What an amazing tour. Learnt so much. Tried many of the sample treats. Jenny was very informative. Would recommend everyone to do a tour",
+      "title": "Fantastic",
+      "content": "What an amazing tour. Learnt so much. Tried many of the sample treats. Jenny was very informative. Would recommend everyone to do a tour.",
       "user_id": 2,
       "location_id": 1
+    },
+    {
+      "id": 3,
+      "title": "Shopping, dinning and some fresh produce",
+      "content": "These central markets hold such a soft spot in my heart. When I'm staying in Adelaide I always manage to get there a couple of times a year.",
+      "user_id": 3,
+      "location_id": 1
+    },
+    {
+      "id": 4,
+      "title": "Lots to see",
+      "content": "Taking a slow walk through Rundle Mall is worth the time because there is lots to see.",
+      "user_id": 1,
+      "location_id": 2
+    },
+    {
+      "id": 5,
+      "title": "Everything you want is here!",
+      "content": "Enjoy strolling along the mall but don’t miss meandering through the arcades full of character and history.",
+      "user_id": 2,
+      "location_id": 2
+    },
+    {
+      "id": 6,
+      "title": "Big Park!",
+      "content": "Huge park to explore. Very flat and easy to get around. Nice place for a picnic on a sunny day. Recommended.",
+      "user_id": 2,
+      "location_id": 4
     }
   ]
