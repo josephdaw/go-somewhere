@@ -209,7 +209,7 @@ form .form-input.form-input-squared {
   font-size: 16px;
 }
 .buttonLocation {
-  text-align: right;
+  text-align: center;
 }
 .reviewTitles {
   padding-left: 50px;
@@ -218,4 +218,20 @@ form .form-input.form-input-squared {
   font-size: 24px;
   font-weight: 0.5px;
   color: #777;
+}
+
+.aboutTiles {
+  padding-left: 50px;
+  padding-top: 5px;
+  align-items: center;
+  text-align: center;
+  color: #777;
+}
+
+.aboutTiles h2 {
+  font-size: 24px;
+  font-weight: 1;
+}
+.grayscale {
+  filter: grayscale(80%);
 }
