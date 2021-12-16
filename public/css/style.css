@@ -3,52 +3,34 @@ html {
   min-height: 100%
 }
 body {
-  position: relative;
   padding-top: 40px;
   padding-bottom: 10px;
-    margin: 0;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #fff;
 }
-
-ul {
-  padding-inline-start: 0;
+.hr {
+  margin: 10px;
 }
-
-.container > hr {
-  margin: 60px 0;
-}
-
-.jumbotron {
-  margin: 80px 0;
+.heroTitle {
+  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
+  color: rgb(83, 82, 82);
 }
-.jumbotron h1 {
-  font-size: 100px;
+.heroTitle h1 {
+  font-size: 60px;
   line-height: 1;
+  margin-bottom: 20px;
 }
-.jumbotron .lead {
-  font-size: 24px;
+.heroText {
+  font-size: 20px;
   line-height: 1.25;
+  font-weight: 1;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-.marketing {
-  margin: 60px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
 .NavStyle {
   display: block;
 }
-
 .styleNavbar {
   min-height: 40px;
   background-color: #fafafa;
@@ -82,47 +64,19 @@ ul {
   border-left: 1px solid rgba(255,255,255,.75);
   border-right: 1px solid rgba(0,0,0,.1);
 }
-
-
-.featurette-divider {
-  margin: 80px 0;
-}
-.featurette {
-  padding-top: 120px;
-  overflow: hidden;
-}
-.featurette-image {
-  margin-top: -120px;
-}
-.featurette-image.pull-left {
-  margin-right: 40px;
-}
-.featurette-image.pull-right {
-  margin-left: 40px;
-}
-.featurette-heading {
-  font-size: 50px;
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
 .locationTiles {
-  margin: 5px;
+  margin: 15px;
   padding: 10px;
 }
 .locationTitle {
-  font-size: 70%;
+  font-size: 20px;
   font-weight: 1;
   color: rgb(59, 59, 59);
 }
-
 .locationText {
-  /**Major Properties**/
   color: rgb(92, 91, 91); 
+  font-size: 15px;
   overflow:hidden;
-  line-height: 1.75rem;
-  max-height: 15rem;
   -webkit-box-orient: vertical;
   display: block;
   display: -webkit-box;
@@ -132,13 +86,112 @@ ul {
   text-align: justify;
   text-justify: inter-word;
 }
-
 .footer{
   text-align: center;
   bottom: 0;
+  color: #777;
+}
+#map {
+  height: 300px;
+}
+a {
+  color: #777;
+  text-decoration: none;
+}
+a:hover {
+  color:rgb(85, 84, 84); 
+  text-decoration:none; 
+  cursor:pointer;  
 }
 
-.row {
-  flex-wrap: none;
+.button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #777;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
 }
 
+.button:hover {
+  background-color: #f7fafa;
+  color: rgb(85, 84, 84);
+}
+
+.button:focus {
+  border-color: #464646;
+  box-shadow: rgba(213, 217, 217, .5) 0 1px 1px 0;
+  outline: 0;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #777;
+}
+
+.loginStyle {
+  align-items: center;
+  width: 60%;
+}
+form {
+  margin:auto;
+}
+
+label {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 1;
+  color: #777;
+}
+
+form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #777;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #777;
+  border-radius: 0.3rem;
+}
+
+form .form-input.form-input-squared {
+  border-radius: 0;
+} 
+.locationTitles {
+  padding-left: 50px;
+  padding-top: 30px;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 0.5px;
+}
+
+.locationsText {
+  padding-top: 5px;
+  color: #777;
+  font-size: 16px;
+}
+.buttonLocation {
+  text-align: right;
+}
+.reviewTitles {
+  padding-left: 50px;
+  padding-top: 5px;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 0.5px;
+  color: #777;
+}

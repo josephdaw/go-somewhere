@@ -4,19 +4,18 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
 <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
 
-<style>
-  #map {
-    height: 400px;
-  }
-</style>
 
-<div class="jumbotron">
+<div class="container heroTitle">
+  <div class="row">
   <h1>Lets go somewhere</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
+  <p class="heroText">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
     tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
+</div>
 
+ 
 <div class="container">
+   <hr>
   <div class="row">
     <div class="col" id="map"></div>
   </div>
@@ -31,16 +30,21 @@
       <p>
         {{#if location.review_count}}
         <a class="btn" href="/locations/{{location.id}}">
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" class="button">
             Reviews <span class="badge bg-secondary">{{location.review_count}}</span>
           </button>
         </a>
         {{/if}}
-        <a class="btn" href="/locations/{{location.id}}">View details &raquo;</a>
+          <a class="btn" href="/locations/{{location.id}}">
+          <button type="button" class="button">
+            Details 
+          </button>
+        </a>
       </p>
     </div>
     {{/each}}
   </div>
+    <hr>
 </div>
 
 <script src="/js/leaflet.js"></script>

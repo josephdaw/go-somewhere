@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
   <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
 
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+
 </head>
 
 <body>
@@ -30,6 +34,7 @@
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/">Home</a></li>
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/about">About</a></li>
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/locations">Locations</a></li>
+           <li class="style-li-nav"><a class="style-a-ul-nav" href="/search">Search</a></li>
             {{#if logged_in}}
             <li class="style-li-nav"><a class="style-a-ul-nav" href="/profile">Profile</a></li>
             <li class="style-li-nav"><a class="style-a-ul-nav" id="logout">Logout</a></li>
@@ -47,14 +52,15 @@
     {{{ body }}}
   </div>
 
-  <hr>
-
+  <div class="container">
   <div class="footer">
+  
+
     <p>&copy; Company Parrots</p>
   </div>
 
   </div>
-
+</div>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
