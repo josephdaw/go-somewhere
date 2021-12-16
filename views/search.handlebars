@@ -1,0 +1,78 @@
+<div class="container heroTitle">
+    <div class="row">
+        <h1>Search for you location</h1>
+        <p class="heroText">find the location you would like to recommend</p>
+        <div class="buttonLocation">
+            {{!-- <button class="btn btn-primary">Add a comment</button> --}}
+            <!-- Button trigger modal -->
+            <div id="search">
+                <input type="text" name="addr" value="" id="addr" size="58" />
+                <div class="searchButton">
+                    <button type="button" class="button" onclick="addr_search();">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <div id="results"></div>
+            <br>
+        </div>
+
+        <br />
+
+        <div id="map"></div>
+
+        <div class="searchButton">
+            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                Add location
+            </button>
+        </div>
+        <br><br><br>
+
+        <hr>
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Add Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                {{!-- new search form --}}
+                <form class="form new-search-form">
+                    <div class="form-group">
+                        <label for="search-title">Location:</label>
+                        <input class="form-input" type="text" id="search-title" name="search-title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="search-content">Description:</label>
+                        <textarea class="form-input" id="search-content" name="search-content"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="button closeButton" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="button" id="submitLocation">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/locationLeaflet.js"></script>
+
+{{#if logged_in}}
+<script src="/js/search.js"></script>
+
+
+{{/if}}

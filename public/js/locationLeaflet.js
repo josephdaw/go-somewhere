@@ -1,68 +1,82 @@
 
-// function to fetch all locations
-const getLocationNames = async () => {
-    const res = await fetch('/api/locations', {
-      method: 'GET',
-    })
-    const data = await res.json()
-    const locations = data.map(location => location.location_name)
-    return locations;
+var startlat = -34.92537;
+var startlon = 138.59973;
+
+var options = {
+ center: [startlat, startlon],
+ zoom: 12
+}
+
+
+var map = L.map('map', options);
+
+
+L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+        {
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+          maxZoom: 20,
+          minZoom: 1
+        }).addTo(map);
+
+        
+var myMarker = L.marker([startlat, startlon], {title: "Coordinates", alt: "Coordinates", draggable: true}).addTo(map).on('dragend', function() {
+ var lat = myMarker.getLatLng().lat.toFixed(8);
+ var lon = myMarker.getLatLng().lng.toFixed(8);
+  document.getElementById('lat').value = lat;
+ document.getElementById('lon').value = lon;
+ myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+});
+
+function chooseAddr(lat1, lng1)
+{
+ myMarker.closePopup();
+ map.setView([lat1, lng1],18);
+ myMarker.setLatLng([lat1, lng1]);
+ lat = lat1.toFixed(8);
+ lon = lng1.toFixed(8);
+ document.getElementById('lat').value = lat;
+ document.getElementById('lon').value = lon;
+ myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+}
+
+function myFunction(arr)
+{
+ var out = "<br />";
+ var i;
+
+ if(arr.length > 0)
+ {
+  for(i = 0; i < arr.length; i++)
+  {
+   out += "<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(" + arr[i].lat + ", " + arr[i].lon + ");return false;'>" + arr[i].display_name + "</div>";
+   
+
   }
-  
-  // lookup locations and then display on map
-  function locationLookUp(locations) {
-    // here you do something with data
-    console.log(locations)
-  
-    // map start coordinates
-    var startlat = -34.92537;
-    var startlon = 138.59973;
-  
-    // Initialize map to specified coordinates
-    var map = L.map('map', {
-      center: [startlat, startlon],
-      zoom: 12
-    });
-  
-    // Add tiles (streets, etc)
-    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-      {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-        maxZoom: 20,
-        minZoom: 1
-      }).addTo(map);
-  
-    var fg = L.featureGroup().addTo(map);
-  
-    var query_addr = locations;
-  
-    query_addr.forEach((query_addr) => {
-      const provider = new window.GeoSearch.OpenStreetMapProvider()
-      var query_promise = provider.search({
-        query: query_addr
-      });
-  
-      query_promise.then(console.log(query_promise))
-  
-      query_promise.then(value => {
-        for (i = 0; i < value.length; i++) {
-          // Success!
-          const labelArray = value[i].label.split(",");
-          const placeName = labelArray.shift();
-          console.log("place: ", placeName)
-          const address = labelArray.join()
-          console.log("address: ", address)
-  
-          var x_coor = value[i].x;
-          var y_coor = value[i].y;
-          // var label = value[i].label;
-          var marker = L.marker([y_coor, x_coor]).addTo(fg) // CAREFULL!!! The first position corresponds to the lat (y) and the second to the lon (x)
-          marker.bindPopup(`<b>${placeName}</b><br>${address}`).openPopup(); // note the "openPopup()" method. It only works on the marker
-        };
-      }, reason => {
-        console.log(reason); // Error!
-      });
-    })
-  }
-  
-  getLocationNames().then(locationLookUp)
+  document.getElementById('results').innerHTML = out;
+  var foundlat = arr[i].lat;
+  console.log(foundlat);
+ }
+ else
+ {
+  document.getElementById('results').innerHTML = "Sorry, no results...";
+ }
+
+}
+
+
+function addr_search()
+{
+ var inp = document.getElementById("addr");
+ var xmlhttp = new XMLHttpRequest();
+ var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + inp.value;
+ xmlhttp.onreadystatechange = function()
+ {
+   if (this.readyState == 4 && this.status == 200)
+   {
+    var myArr = JSON.parse(this.responseText);
+    myFunction(myArr);
+   }
+ };
+ xmlhttp.open("GET", url, true);
+ xmlhttp.send();
+}

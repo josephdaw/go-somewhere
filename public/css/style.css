@@ -26,7 +26,8 @@ body {
 .heroText {
   font-size: 20px;
   line-height: 1.25;
-  font-weight: 1;
+  font-weight: .5;
+  color: #777;
 }
 .NavStyle {
   display: block;
@@ -234,4 +235,14 @@ form .form-input.form-input-squared {
 }
 .grayscale {
   filter: grayscale(80%);
+}
+.searchButton {
+  margin-top: 10px;
+}
+.commentButton {
+  width: 200px;
+}
+
+.closeButton {
+  background-color: rgb(207, 207, 207);
 }
