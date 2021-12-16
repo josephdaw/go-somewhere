@@ -24,7 +24,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/location');
+        document.location.replace('/locations');
         
       } else {
         alert('Failed to add location');
