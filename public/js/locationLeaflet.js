@@ -25,13 +25,25 @@ var myMarker = L.marker([startlat, startlon], { title: "Coordinates", alt: "Coor
   myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
 });
 
-function chooseAddr(lat1, lng1) {
-  myMarker.closePopup();
-  map.setView([lat1, lng1], 18);
-  myMarker.setLatLng([lat1, lng1]);
-  lat = lat1.toFixed(8);
-  lon = lng1.toFixed(8);
-  myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+// function chooseAddr(lat1, lng1, label) {
+//   console.log(lat1);
+//   myMarker.closePopup();
+//   map.setView([lat1, lng1], 18);
+//   myMarker.setLatLng([lat1, lng1]);
+//   lat = lat1.toFixed(8);
+//   lon = lng1.toFixed(8);
+//   myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+// }
+
+function chooseAddr(lat1, lng1, label)
+{
+  console.log(label)
+ myMarker.closePopup();
+ map.setView([lat1, lng1],18);
+ myMarker.setLatLng([lat1, lng1]);
+ lat = lat1.toFixed(8);
+ lon = lng1.toFixed(8);
+ myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
 }
 
 function renderResults(arr) {
@@ -40,7 +52,12 @@ function renderResults(arr) {
 
   if (arr.length > 0) {
     for (i = 0; i < arr.length; i++) {
-      out += `<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(${arr[i].lat}, ${arr[i].lon});return false;'>${arr[i].display_name}</div>`;
+      // separate the name of the location from the address
+      const labelArray = arr[i].display_name.split(",");
+      const placeName = labelArray.shift();
+
+      // console.log(placeName);
+      out += `<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(${arr[i].lat}, ${arr[i].lon}, ${placeName});return false;'>${arr[i].display_name}</div>`;
     }
     document.getElementById('results').innerHTML = out;
   }

@@ -46,12 +46,11 @@ function locationLookUp(locations) {
 
     query_promise.then(value => {
       for (i = 0; i < value.length; i++) {
-        // Success!
+        // separate the name of the location from the address
         const labelArray = value[i].label.split(",");
         const placeName = labelArray.shift();
-        console.log("place: ", placeName)
         const address = labelArray.join()
-        console.log("address: ", address)
+
 
         var x_coor = value[i].x;
         var y_coor = value[i].y;
