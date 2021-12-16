@@ -1,9 +1,6 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const urlArray = window.location.pathname.split('/');
-    const location_id = urlArray[urlArray.length - 1];
-  
     const location_name = document.querySelector('#search-title').value.trim();
     const description = document.querySelector('#search-content').value.trim();
   
@@ -30,8 +27,6 @@ const newFormHandler = async (event) => {
         alert('Failed to add location');
       }
     }
-  
-  
   };
   
   document
