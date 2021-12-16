@@ -53,6 +53,20 @@ router.get('/about', (req, res) => {
 
 });
 
+
+//search
+router.get('/search', (req, res) => {
+  try {
+    res.render('search');
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+
+});
+
+
 // get all locations
 router.get('/locations', async (req, res) => {
   try {
@@ -141,4 +155,29 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+
+
+// router.get('/search', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Review }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render('search', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 module.exports = router;
+
+
+
