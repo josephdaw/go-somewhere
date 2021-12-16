@@ -55,9 +55,8 @@ function locationLookUp(locations) {
 
         var x_coor = value[i].x;
         var y_coor = value[i].y;
-        // var label = value[i].label;
-        var marker = L.marker([y_coor, x_coor]).addTo(fg) // CAREFULL!!! The first position corresponds to the lat (y) and the second to the lon (x)
-        marker.bindPopup(`<b>${placeName}</b><br>${address}`).openPopup(); // note the "openPopup()" method. It only works on the marker
+        var marker = L.marker([y_coor, x_coor]).addTo(fg)
+        marker.bindPopup(`<b>${placeName}</b><br>${address}`).openPopup(); 
       };
     }, reason => {
       console.log(reason); // Error!
@@ -65,4 +64,4 @@ function locationLookUp(locations) {
   })
 }
 
-getLocationNames().then(locationLookUp)
+getLocationNames().then(locationLookUp);
