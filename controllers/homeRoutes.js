@@ -161,8 +161,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// wildcard for 
-router.get('*', (req, res) => {
+// wildcard for 404 
+router.get('*', (res) => {
   res.render('404');
 });
 
