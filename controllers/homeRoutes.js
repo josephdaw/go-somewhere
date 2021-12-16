@@ -6,32 +6,32 @@ const sequelize = require('../config/connection');
 router.get('/', async (req, res) => {
   try {
     // Get 3 most reviewed locations for homepage
-    const locationData = await Location.findAll({ 
+    const locationData = await Location.findAll({
       limit: 3,
       attributes: {
         include: [
-            [
-                sequelize.literal(`(
+          [
+            sequelize.literal(`(
                     SELECT COUNT(*)
                     FROM review
                     WHERE
                     review.location_id = location.id
                 )`),
-                'review_count'
-            ]
+            'review_count'
+          ]
         ]
-    },
-    order: [
+      },
+      order: [
         [sequelize.literal('review_count'), 'DESC']
-    ]
+      ]
     });
 
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      locations, 
+    res.render('homepage', {
+      locations,
       logged_in: req.session.logged_in,
     });
 
@@ -44,8 +44,11 @@ router.get('/', async (req, res) => {
 // routing for about page
 router.get('/about', (req, res) => {
   try {
-    res.render('about');
-    
+    res.render('about', {
+      logged_in: req.session.logged_in
+    });
+
+
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -57,8 +60,11 @@ router.get('/about', (req, res) => {
 //search
 router.get('/search', (req, res) => {
   try {
-    res.render('search');
-    
+    res.render('search', {
+      logged_in: req.session.logged_in
+    });
+
+
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -73,28 +79,28 @@ router.get('/locations', async (req, res) => {
     const locationData = await Location.findAll({
       attributes: {
         include: [
-            [
-                sequelize.literal(`(
+          [
+            sequelize.literal(`(
                     SELECT COUNT(*)
                     FROM review
                     WHERE
                     review.location_id = location.id
                 )`),
-                'review_count'
-            ]
+            'review_count'
+          ]
         ]
-    },
-    order: [
+      },
+      order: [
         [sequelize.literal('review_count'), 'DESC']
-    ]
+      ]
     });
 
     // Serialize data so the template can read it
     const locations = locationData.map((location) => location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('locations', { 
-      locations, 
+    res.render('locations', {
+      locations,
       logged_in: req.session.logged_in,
     });
 
@@ -115,8 +121,8 @@ router.get('/locations/:id', withAuth, async (req, res) => {
     const location = locationData.get({ plain: true })
     console.log(location)
 
-    res.render('location', { 
-      ...location, 
+    res.render('location', {
+      ...location,
       logged_in: req.session.logged_in,
     });
 
