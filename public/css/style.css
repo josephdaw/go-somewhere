@@ -246,3 +246,38 @@ form .form-input.form-input-squared {
 .closeButton {
   background-color: rgb(207, 207, 207);
 }
+
+.welcome-name {
+  justify-content: center;
+}
+
+.user-reviews {
+  width: 100vw;
+ margin-left: 37%;
+ margin-top: 20px;
+}
+
+.user-reviews h3 {
+  margin-left: 47px;
+}
+
+.user-reviews h4 {
+  margin-left: 64px;
+  margin-top: 20px;
+}
+
+
+.user-reviews h4:hover {
+  transform: scale(1.15);
+  transition: .2s ease-in-out; 
+}
+
+.container-fluid {
+  display: block;
+ justify-content: center;
+ width:50vw;
+}
+.nav-link {
+  margin-left: 100px;
+ text-align: center;
+}

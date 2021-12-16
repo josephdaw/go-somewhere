@@ -1,10 +1,11 @@
 <div class="row welcome-name">
   <div class="welcome col-auto">
     <h2>Welcome, {{name}}!</h2>
+    <p>Below is a list of your reviews!</p>
   </div>
 </div>
 
-<div class="row welcome-create mt-4">
+{{!-- <div class="row welcome-create mt-4">
   <div class="welcome col-md-6">
     <h3>Create a New Location:</h3>
 
@@ -21,10 +22,10 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> --}}
 
   {{#if reviews.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 user-reviews">
     <h3>Current Reviews:</h3>
 
     {{#each reviews as |review|}}
