@@ -110,6 +110,7 @@ ul {
 .locationTiles {
   margin: 5px;
   padding: 10px;
+  background-image: linear-gradient(#f2f2f2, #fff );
 }
 .locationTitle {
   font-size: 70%;
@@ -142,3 +143,25 @@ ul {
   flex-wrap: none;
 }
 
+.review {
+  padding-top: 10px;
+  border-top: 2px solid lightgray;
+}
+
+.tab-pane {
+  width: 50%;
+ margin-left: 50px;
+}
+
+#pills-tab {
+  margin-left: 50px;
+}
+
+.new-location-form {
+  margin-left: 30px;
+  width: 70%;
+}
+
+.welcome {
+  margin-left: 50px;
+}
