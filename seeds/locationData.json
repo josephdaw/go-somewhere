@@ -28,5 +28,11 @@
     "location_name": "Adelaide Oval",
     "description": "Adelaide Oval has long been one of Australia’s most recognisable and prestigious venues and hosts cricket, football, concerts, functions and major events at the highest level. Known the world over as a beautiful and historic sporting venue, the Oval attracts visitors in their thousands from within South Australia, interstate and overseas.",
     "user_id": "2"
+  },
+  {
+    "id": 6,
+    "location_name": "Mississippi Moon",
+    "description": "",
+    "user_id": "2"
   }
 ]

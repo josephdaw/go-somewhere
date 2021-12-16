@@ -61,5 +61,19 @@
       "content": "This is such a gem of a tour. Highly recommended. We should be so proud of this amazing stadium. Such a good value tour as well. Even if you are not a sports fan it is interesting & the volunteer tour guide. Bob was awesome.",
       "user_id": 3,
       "location_id": 5
+    },
+    {
+      "id": 10,
+      "title": "Great place to sit and watch the world go by",
+      "content": "Tripped over this place on a quiet evening. Very quiet but probably due to Covid 19, staff were friendly and a nice place to sit and people watch from the open front. Good selection of beer.",
+      "user_id": 3,
+      "location_id": 6
+    },
+    {
+      "id": 11,
+      "title": "Hidden Gem In Adelaide",
+      "content": "Found this bar by chance on Friday night before we had a dinner reservation nearby. What a pleasant surprise! Fantastic atmosphere (they play old school classics which was a nice change!) and even better drinks.",
+      "user_id": 2,
+      "location_id": 6
     }
   ]
