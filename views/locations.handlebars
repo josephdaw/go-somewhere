@@ -1,17 +1,44 @@
-{{#each locations as |location| }}
-<div class="col locationTiles">
-  <h2><a class='locationTitle' href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
-  <p class="locationText">{{location.description}} </p>
-  <p class="locationText"> </p>
-  <p>
-    {{#if location.review_count}}
-    <a class="btn" href="/locations/{{location.id}}">
-          <button type="button" class="btn btn-outline-secondary">
+
+
+<div class="container heroTitle">
+  <div class="row">
+  <h1>Lets go somewhere</h1>
+  <p class="heroText">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
+    tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+</div>
+</div>
+
+ 
+<div class="container">
+   <hr>
+
+  <div class="row">
+
+
+   {{#each locations as |location| }}
+<div class="row mb-4">
+  <div class="col-md-5 locationTitles">
+     <h2><a  href="/locations/{{location.id}}">{{location.location_name}}</a></h2>
+  </div>
+  <div class="col-md-7 locationsTextbox">
+ <p class="locationsText">{{location.description}}</p>
+ <p class ="buttonLocation">
+        {{#if location.review_count}}
+        <a class="btn" href="/locations/{{location.id}}">
+          <button type="button" class="button">
             Reviews <span class="badge bg-secondary">{{location.review_count}}</span>
           </button>
         </a>
-    {{/if}}
-    <a class="btn" href="/locations/{{location.id}}">View details &raquo;</a>
-  </p>
+        {{/if}}
+          <a class="btn" href="/locations/{{location.id}}">
+          <button type="button" class="button">
+            Details 
+          </button>
+        </a>
+      </p>
+  </div>
 </div>
+  <hr>
 {{/each}}
+
+</div>

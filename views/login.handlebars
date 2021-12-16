@@ -1,12 +1,26 @@
+<div class="container heroTitle">
+  <div class="row">
+  <h1>Lets go somewhere</h1>
+  <p class="heroText">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo,
+    tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+</div>
+</div>
+
+<div class="container">
+   <hr>
+  <div class="row m-4 loginStyle">
+
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Login</button>
+    <button class="nav-link active button" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Login</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</button>
+    <button class="nav-link button" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</button>
   </li>
   
 </ul>
+
+
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> 
       <form class="form login-form">
@@ -19,17 +33,13 @@
           <input class="form-input" type="password" id="password-login" />
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">Login</button>
+          <button class="button" type="submit">login</button>
         </div>
       </form></div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><form class="form signup-form">
         <div class="form-group">
-          <label for="first-name-signup">First Name:</label>
-          <input class="form-input" type="text" id="first-name-signup" />
-        </div>
-        <div class="form-group">
-          <label for="last-name-signup">Last Name:</label>
-          <input class="form-input" type="text" id="last-name-signup" />
+          <label for="name-signup">Name:</label>
+          <input class="form-input" type="text" id="name-signup" />
         </div>
         <div class="form-group">
           <label for="email-signup">email:</label>
@@ -40,7 +50,7 @@
           <input class="form-input" type="password" id="password-signup" />
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">Signup</button>
+          <button class="button" type="submit">signup</button>
         </div>
       </form></div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
@@ -82,5 +92,6 @@
   </div>
 </div>
 
-
+</div>
+</div>
 <script src="./js/login.js"></script>

@@ -1,65 +1,84 @@
-<div class="text-center">
-  <h2>{{location_name}}</h2>
-  <p>{{description}}</p>
-  <p>
-    {{#if logged_in}}
-    {{!-- <button class="btn btn-primary">Add a comment</button> --}}
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal">
-      Add Review
-    </button>
-    {{else}}
-    <button class="btn btn-primary">
-      <a href="/login">Login to add a comment</a>
-    </button>
+<div class="container heroTitle">
+  <div class="row">
+    <h1>{{location_name}}</h1>
+    <p class="heroText">{{description}}</p>
+    <div class="buttonLocation">
+      {{#if logged_in}}
+      {{!-- <button class="btn btn-primary">Add a comment</button> --}}
+      <!-- Button trigger modal -->
+      <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#reviewModal">
+        Add Review
+      </button>
+      {{else}}
+      <button class="button">
+        <a href="/login">Login to add a comment</a>
+      </button>
 
-    {{/if}}
-  </p>
-</div>
-
-{{#each reviews as |review|}}
-<div class="text-center review">
-  <h2>{{review.title}}</h2>
-  <p>{{review.content}}</p>
-</div>
-{{/each}}
-
-
-
-
-
-
-<!-- Review Modal -->
-<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="reviewModalLabel">Add a Review</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        {{!-- new review form --}}
-        <form class="form new-review-form">
-          <div class="form-group">
-            <label for="review-title">Review Title:</label>
-            <input class="form-input" type="text" id="review-title" name="review-title" />
-          </div>
-          <div class="form-group">
-            <label for="review-content">Description:</label>
-            <textarea class="form-input" id="review-content" name="review-content"></textarea>
-          </div>
-        </form>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="submitReview">Submit Review</button>
-      </div>
+      {{/if}}
     </div>
   </div>
 </div>
 
-{{#if logged_in}}
-<script src="/js/location.js"></script>
-{{/if}}
+
+
+
+<div class="container">
+  <hr>
+
+  <div class="row">
+
+
+    {{#each reviews as |review|}}
+    <div class="row mb-4">
+      <div class="col-md-5">
+        <h2 class="reviewTitles">{{review.title}}</h2>
+      </div>
+      <div class="col-md-7 locationsTextbox">
+        <p class="locationsText">{{review.content}}</p>
+
+      </div>
+    </div>
+    <hr>
+    {{/each}}
+
+  </div>
+
+
+
+
+
+
+  <!-- Review Modal -->
+  <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reviewModalLabel">Add a Review</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          {{!-- new review form --}}
+          <form class="form new-review-form">
+            <div class="form-group">
+              <label for="review-title">Review Title:</label>
+              <input class="form-input" type="text" id="review-title" name="review-title" />
+            </div>
+            <div class="form-group">
+              <label for="review-content">Description:</label>
+              <textarea class="form-input" id="review-content" name="review-content"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="submitReview">Submit Review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{#if logged_in}}
+  <script src="/js/location.js"></script>
+  {{/if}}

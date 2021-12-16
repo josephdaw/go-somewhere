@@ -21,13 +21,14 @@ function locationLookUp(locations) {
   // Initialize map to specified coordinates
   var map = L.map('map', {
     center: [startlat, startlon],
-    zoom: 14
+    zoom: 12
   });
 
   // Add tiles (streets, etc)
   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      maxZoom: 20,
       minZoom: 1
     }).addTo(map);
 
