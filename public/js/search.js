@@ -4,23 +4,27 @@ const newFormHandler = async (event) => {
     const urlArray = window.location.pathname.split('/');
     const location_id = urlArray[urlArray.length - 1];
   
-    const title = document.querySelector('#search-title').value.trim();
-    const content = document.querySelector('#search-content').value.trim();
+    const location_name = document.querySelector('#search-title').value.trim();
+    const description = document.querySelector('#search-content').value.trim();
   
-    if (title && content) {
-      const response = await fetch(`/api/search`, {
+    if (!location_name || !description) {
+      alert("Please ensure all fields are filled out.")
+    }
+
+    if (location_name && description) {
+      const response = await fetch(`/api/locations`, {
         method: 'POST',
         body: JSON.stringify({ 
-          title, 
-          content,
-          location_id }),
+          location_name, 
+          description
+         }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.reload();
+        document.location.replace('/locations');
         
       } else {
         alert('Failed to add location');

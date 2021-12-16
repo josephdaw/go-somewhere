@@ -45,8 +45,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the dashboard page
-      document.location.replace('/locations');
+      // If successful, redirect the browser to the page the user initially tried to access
+      document.location.replace(res.redirect);
     } else {
       console.log('err', response)
       alert(response.statusText);

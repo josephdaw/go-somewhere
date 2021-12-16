@@ -34,8 +34,6 @@ function chooseAddr(lat1, lng1)
  myMarker.setLatLng([lat1, lng1]);
  lat = lat1.toFixed(8);
  lon = lng1.toFixed(8);
- document.getElementById('lat').value = lat;
- document.getElementById('lon').value = lon;
  myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
 }
 
@@ -53,8 +51,6 @@ function myFunction(arr)
 
   }
   document.getElementById('results').innerHTML = out;
-  var foundlat = arr[i].lat;
-  console.log(foundlat);
  }
  else
  {
