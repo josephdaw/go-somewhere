@@ -1,45 +1,48 @@
-<div class="row welcome-name">
-  <div class="welcome col-auto">
+
+
+<div class="container heroTitle">
+  <div class="row">
     <h2>Welcome, {{name}}!</h2>
-    <p>Below is a list of your reviews!</p>
+    <p class="heroText">Time to start posting your locations and leaving your reviews!</p>
   </div>
 </div>
 
-{{!-- <div class="row welcome-create mt-4">
-  <div class="welcome col-md-6">
-    <h3>Create a New Location:</h3>
 
-    <form class="form new-location-form">
-      <div class="form-group">
-        <label for="location-name">Location name:</label>
-        <input class="form-input" type="text" id="location-name" name="location-name" />
-      </div>
-      <div class="form-group">
-        <label for="location-description">Description:</label>
-        <textarea class="form-input" id="location-description" name="location-description"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div> --}}
-
-  {{#if reviews.length}}
-  <div class="col-md-6 user-reviews">
-    <h3>Current Reviews:</h3>
-
-    {{#each reviews as |review|}}
+<div class="container">
+  <hr>
+  <div class="row">
+     {{#if reviews.length}}
+    <p> Current Reviews:</p>
+   {{#each reviews as |review|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/locations/{{review.location_id}}">{{review.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
+        <button class="reviewButton btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
+  </div>
+  <div class="row">
+     <p class ="buttonLocation">
+              <a class="btn" href="/locations">
+          <button type="button" class="button">
+            Locations 
+          </button>
+        </a>
+      <a class="btn" href="/search">
+          <button type="button" class="button">
+            Search 
+          </button>
+        </a>
+
+    </p>
+  </div>
 </div>
+
+
 
 <script src="/js/profile.js"></script>

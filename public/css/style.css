@@ -32,39 +32,7 @@ body {
 .NavStyle {
   display: block;
 }
-.styleNavbar {
-  min-height: 40px;
-  background-color: #fafafa;
-  background-image: linear-gradient(to bottom, #fff, #f2f2f2);
-  background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
- padding: 0;
- display: block;
-}
-.style-ul-nav {
-  margin: 0;
-  display: table;
-  width: 100%;
-}
-.style-a-ul-nav {
-  float: none;
-  padding: 10px 15px 10px;
-  color: #777;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
-  display: block;
-}
-.style-li-nav {
-  display: table-cell;
-  width: 1%;
-  float: none;
-  font-weight: bold;
-  text-align: center;
-  border-left: 1px solid rgba(255,255,255,.75);
-  border-right: 1px solid rgba(0,0,0,.1);
-}
+
 .locationTiles {
   margin: 15px;
   padding: 10px;
@@ -88,7 +56,7 @@ body {
   text-align: justify;
   text-justify: inter-word;
 }
-.footer{
+footer{
   text-align: center;
   bottom: 0;
   color: #777;
@@ -128,22 +96,19 @@ a:hover {
   vertical-align: middle;
   width: 100px;
 }
-
 .button:hover {
   background-color: #f7fafa;
   color: rgb(85, 84, 84);
 }
-
 .button:focus {
   border-color: #464646;
   box-shadow: rgba(213, 217, 217, .5) 0 1px 1px 0;
+  
   outline: 0;
 }
-
 .nav-pills .nav-link.active {
   background-color: #777;
 }
-
 .loginStyle {
   align-items: center;
   width: 60%;
@@ -151,14 +116,12 @@ a:hover {
 form {
   margin:auto;
 }
-
 label {
   font-size: 18px;
   line-height: 1.25;
   font-weight: 1;
   color: #777;
 }
-
 form .form-input {
   width: 100%;
   padding: 0.75rem;
@@ -169,30 +132,24 @@ form .form-input {
   border: 1px solid #777;
   border-radius: 0.3rem;
 }
-
 .review {
   padding-top: 10px;
   border-top: 2px solid lightgray;
 }
-
 .tab-pane {
   width: 50%;
  margin-left: 50px;
 }
-
 #pills-tab {
   margin-left: 50px;
 }
-
 .new-location-form {
   margin-left: 30px;
   width: 70%;
 }
-
 .welcome {
   margin-left: 50px;
 }
-
 form .form-input.form-input-squared {
   border-radius: 0;
 } 
@@ -203,7 +160,6 @@ form .form-input.form-input-squared {
   font-size: 24px;
   font-weight: 0.5px;
 }
-
 .locationsText {
   padding-top: 5px;
   color: #777;
@@ -220,7 +176,6 @@ form .form-input.form-input-squared {
   font-weight: 0.5px;
   color: #777;
 }
-
 .aboutTiles {
   padding-left: 50px;
   padding-top: 5px;
@@ -228,7 +183,6 @@ form .form-input.form-input-squared {
   text-align: center;
   color: #777;
 }
-
 .aboutTiles h2 {
   font-size: 24px;
   font-weight: 1;
@@ -242,42 +196,48 @@ form .form-input.form-input-squared {
 .commentButton {
   width: 200px;
 }
-
 .closeButton {
   background-color: rgb(207, 207, 207);
 }
-
 .welcome-name {
   justify-content: center;
 }
-
 .user-reviews {
   width: 100vw;
  margin-left: 37%;
  margin-top: 20px;
 }
-
 .user-reviews h3 {
   margin-left: 47px;
 }
-
 .user-reviews h4 {
   margin-left: 64px;
   margin-top: 20px;
 }
-
-
 .user-reviews h4:hover {
   transform: scale(1.15);
   transition: .2s ease-in-out; 
 }
 
-.container-fluid {
-  display: block;
- justify-content: center;
- width:50vw;
+nav {
+  display: flex;
+  flex-flow: row nowrap;
 }
-.nav-link {
-  margin-left: 100px;
- text-align: center;
+
+nav a {
+  text-align: center;
+  cursor: pointer;
+  border-left: 1px solid white;
+  text-decoration: none;
+  padding: 6.25rem 0.5rem;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 5.5rem;
+  padding-left: 3rem;
+ justify-content: center;
+}
+.navbar {
+ justify-content: center;
+ padding-right: 5.5rem;
+  padding-left: 2rem;
 }

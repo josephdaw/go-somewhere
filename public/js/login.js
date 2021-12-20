@@ -32,6 +32,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
+  console.log(window.location.pathname.split('/') );
 
   if (name && email && password) {
     const response = await fetch('/api/users', {
@@ -44,8 +45,9 @@ const signupFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      // If successful, redirect the browser to the page the user initially tried to access
+    if (response.ok || window.location.pathname.split('/') == 'login') {
+        document.location.replace('/locations');
+      } else if (response.ok ) {
       document.location.replace(res.redirect);
     } else {
       console.log('err', response)
